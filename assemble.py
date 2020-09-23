@@ -15,13 +15,6 @@ def flRead(filename):
             lineArray.append(line.strip())
     return lineArray
 
-def leng(n):
-    count = 0
-    while(n>0):
-        n=n//10
-        count = count + 1
-    return count
-
 def numberOps(line):
     addrStr = re.sub("\(", "", re.search(".[0-9a-fA-F]{1,}", line).group())
     addr = 0x00
