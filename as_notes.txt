@@ -1,0 +1,27 @@
+- Two inputs to a assembler: the file in which the code is stored and a command to execute the assembler and tell it where the code it
+- Two outputs to assember: the object file (machine code) and the listing file
+    - Listing file has the following for a source file
+        - Location counter ; The source line ; The machine instruction (or if command is a directive, any other data)
+- One pass assemblers take data and turn it into binary to be put into memeory
+- Two pass assemblers are used today and generate an object file
+- Linking is putting two assembled files together so that they can share functions or similar.
+- Design assembler and loader seperate
+- Modern assemblers are "Full-feature, relocatable macro assemblers with conditional assembly"
+
+Types of assemblers:
+- One pass assembler: assembler that performs all the functions by reading the source file once
+- Two pass assembler: assember that reads the source file twice
+- Resident assembler: assember that is stored in ROM and is very simple
+- Macro-Assembler: assembler that supports macros
+- Cross-assember: assembler that assembles on one computer to another architecture
+- Meta-assembler: assembler that handles many instruction sets
+- Disassembler: opposite of assember; taking machine language into human-readable assembly
+- Hgih-level assembler: a mixture of high level functionality with low level assembly commands (can be considered a high level language that is machine dependant) 
+- Micro-assember: assembles microinstructions (not really needed for what we're doing)
+- Bootstrap loader: uses the first couple instructions to load the rest of the program into memory (usually in ROM)
+- Absolute loader: only loads absolute object files (only lodas program starting at fixed point in memory)
+- Relocating loader: can load relocatable object files (the same program can start in any location)
+- Linking loader: can link programs that were assembled sepreately
+- Linkage editor: links programs and relocation
+
+Stopped on page 22.
