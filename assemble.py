@@ -26,6 +26,13 @@ def numberOps(line):
         addr = int(addrStr, base=10) # Decimal
     return addr.to_bytes(2, 'little')
 
+# Instructions:
+# adc, and, asl, bcc, bcs, beq, bitt, bmi, bne, bpl, brk, bvc, bvs, clc, cld, cli, clv,
+# cmp, cpx, cpy, dec, dex, dey, eor, inc, inx, iny, lda, ldx, ldy, lsr, ora, pha, php, 
+# pla, plp, rol, ror, rti, rts, sbc, sec, sed, sei, sta, stx, sty, tax, tay, tsx, tsa,
+# tsx, tya
+
+
 def ascessorLine(line):
     if "nop" in line:
         print("Line", asLineN,", is asking for a no operation instruction.")
@@ -58,8 +65,19 @@ def ascessorLine(line):
         else: 
             # what
             print("What")
-    return [0x00]
+    elif "jsr" in line:
+        print("Line", asLineN, "is asking for a jump to subroutine instruction")
+        toRet = [0x20]
+        numbers = numberOps(line)
+        for number in numbers:
+            toRet.append(number)
+        return toRet
+#    elif "adc" in line:
+        # Now we need to differentiate between the immediate, zero page, zero pagex, 
+        # absolute, absolutex, absolutey, indirectx, indirecty instructions.
 
+
+    return [0x00]
 
 
 flin = sys.argv[1]
